@@ -1,7 +1,19 @@
 # REST_API_server
 Simple Flask REST API server, which can be used to display, add, update and delete data from allocated SQL table.
 
-Interaction with a server is done through API development such as Postman or VSCode extension Thunder Client; four basic CRUD functions are done via basic HTTP methods: POST, GET, PUT and DELETE respectively. 
+Sqlite database used for storaging data is named 'sqlite.db', table is named 'employees'. It has 9 columns:
+- Surname (string)
+- Name (string)
+- Second_name (string)
+- Birth_year (int)
+- ID_number (int) - unique value
+- Income (float)
+- Position (string)
+- Entity (string)
+- Department (string)
+
+
+Interaction with a server is done through API development software such as Postman or VSCode extension Thunder Client. Four basic CRUD functions are done via basic HTTP methods: POST, GET, PUT and DELETE respectively. 
 After launch of the server all queries are done via adress bar.
 All methods use common first part of address: http://127.0.0.1:5000/employees
 
