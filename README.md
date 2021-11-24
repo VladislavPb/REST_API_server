@@ -19,6 +19,7 @@ All methods use common first part of address: http://127.0.0.1:5000/employees
 
 1) To **display** data from table, GET method is used:
 - Then you send query like GET 'http://127.0.0.1:5000/employees&ID_number&Surname&Name&Second_name' with all you four input fields empty, full table is displayed via list of vocabularies. Each row represented like this:
+
   {
     "Surname": "Ivanov",
     "Name": "Ivan",
@@ -30,6 +31,7 @@ All methods use common first part of address: http://127.0.0.1:5000/employees
     "Entity": "Gazprom",
     "Department": "Head"
   }
+ 
   If table is empty, you'll get an empty list without contents.
  - Then you send query GET with address like 'http://127.0.0.1:5000/employees=222333&ID_number&Surname&Name&Second_name and so on, you'll be displayed with vocabulary from associated row or empty list if there is no such ID number in table.
  - Also you can send query GET with adress like http://127.0.0.1:5000/employees&ID_number&Surname=Ivanov&Name=Ivan&Second_name=Ivanovich, you'll be displayed with one or multiple vocabularies from associated rows (cause combination Surname, Name and Second_name is not unique) or simply with empty list.
@@ -52,3 +54,5 @@ All methods use common first part of address: http://127.0.0.1:5000/employees
  - If doesn't exist, message about nonexistence of row with this ID_number is sent back.
  This method is done only with ID_number as single possible argument because it is only unique column in table. Even 8 other fields don't guarantie uniqueness of a table row - but this single field succesfully does.
 
+
+For correct working **flask-restful** module should have version **0.3.9**
