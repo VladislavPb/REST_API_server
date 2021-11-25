@@ -17,7 +17,7 @@ Interaction with a server is done through API development software such as Postm
 After launch of the server all queries are done via adress bar.
 All methods use common first part of address: http://127.0.0.1:5000/employees
 
-1) To **display** data from table, GET method is used:
+1) To **read** data from table, GET method is used:
 - Then you send query like GET 'http://127.0.0.1:5000/employees&ID_number&Surname&Name&Second_name' with all you four input fields empty, full table is displayed via list of vocabularies. Each row represented like this:
 
   {
@@ -37,7 +37,7 @@ All methods use common first part of address: http://127.0.0.1:5000/employees
  - Also you can send query GET with adress like http://127.0.0.1:5000/employees&ID_number&Surname=Ivanov&Name=Ivan&Second_name=Ivanovich, you'll be displayed with one or multiple vocabularies from associated rows (cause combination Surname, Name and Second_name is not unique) or simply with empty list.
  - If you send query GET with all four field full or only two parts of name or any other make any other not normal activity, this message will be displayed - 'Invalid input. Please print single int value into ID field or three string values name fields'.
 
-2) To **add** new row to table, POST method is used:
+2) To **create** new row in table, POST method is used:
  Then you send query like POST 'http://127.0.0.1:5000/employees&Surname=Ivanov&Name=Ivan&Second_name=Ivanovich&Birth_year=1995&ID_number=222333&Income=50000.0&Position=Lawer&Entiry=Sberbank&Department=Law, data in table will be updated. Firstly server check that all 9 inputs have their respective datatypes. If no, error message is send back; If input is succesfull, server checks whenever ID_number in query already in a table:
  - If exists, message that data cannot be added displayed.
  - If doesn't exist, data is added to table as a new row and message about succesfull adding displayed.
